@@ -1,0 +1,51 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.VO.VOStudent;
+import com.example.demo.seriver.serviceStudentimpl;
+
+@RestController
+public class findStudent {
+	@Autowired
+	private serviceStudentimpl ser;
+
+	@RequestMapping(value = "/findStu")
+	public List<VOStudent> findstu(String name) {
+		return ser.findstu(name);
+
+	}
+	
+	@RequestMapping(value="/addstudnet")
+	public Integer addstu(VOStudent vostu) {
+		VOStudent vos= new VOStudent();
+		vos.setName(vostu.getName());
+		vos.setAge(vostu.getAge());
+		vos.setSex(vostu.getSex());
+		return ser.addstudent(vos);
+		
+	}
+	
+	@RequestMapping(value="/updatestusent")
+	public Integer updatestu(VOStudent vostu) {
+		VOStudent vos= new VOStudent();
+		vos.setName(vostu.getName());
+		vos.setAge(vostu.getAge());
+		vos.setSex(vostu.getSex());
+		return ser.updatestudent(vos);
+	}
+	
+	@RequestMapping
+	public Integer delstu(Integer id) {
+		
+		
+		return ser.delstudent(id);
+		
+	}
+	
+	
+}

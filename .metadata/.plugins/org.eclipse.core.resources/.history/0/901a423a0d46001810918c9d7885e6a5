@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">   
+<mapper namespace="com.etc.mapper.StudentMapper">  
+<!-- 结果集 -->  
+<resultMap id="studentMap" type="com.etc.po.Student">  
+        <id column="sno" property="sno" />  
+        <result column="sname" property="sname" />  
+        <result column="sage" property="sage" />  
+</resultMap>  
+  
+<select id="findAll" resultMap="studentMap" parameterType="com.etc.po.Student">  
+    select  
+        sno,  
+        sname,  
+        sage   
+    from   
+        t_student  
+</select>  
+  
+<insert id="insertStudent" parameterType="com.etc.po.Student" useGeneratedKeys="true" keyProperty="sno">  
+    insert into   
+        t_student(sname,sage)  
+    values  
+        (#{sname},#{sage})  
+</insert>  
+  
+<select id="findById" resultMap="studentMap" parameterType="java.lang.Integer">  
+    select   
+        sno,  
+        sname,  
+        sage  
+    from   
+        t_student  
+    where  
+        sno = #{sno}  
+          
+</select>  
+<!--   
+报错：Result Maps collection does not contain value for com.etc.po.Student  
+解决方法：将findById查询方法的  resultMap="com.etc.po.Student" 改为 resultMap="studentMap"  
+ -->  
+   
+<update id="updateStudent" parameterType="com.etc.po.Student">  
+    update   
+        t_student  
+    set   
+        sname = #{sname},sage=#{sage}  
+    where   
+        sno = #{sno}  
+</update>  
+  
+<delete id="deleteStudent" parameterType="java.lang.Integer">  
+    delete from  
+        t_student  
+    where   
+        sno = #{sno}  
+</delete>  
+  
+<delete id="delteStudent2" parameterType="com.etc.po.Student">  
+    delete from  
+        t_student  
+    where   
+        sno = #{sno}  
+</delete>  
+  
+</mapper> 

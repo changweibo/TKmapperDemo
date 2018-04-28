@@ -1,0 +1,18 @@
+package com.example.demo.mapper;
+
+import com.example.demo.entity.F;
+import com.example.demo.entity.studentEntity;
+
+public interface FMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(studentEntity record);
+
+    int insertSelective(F record);
+
+    F selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(F record);
+
+    int updateByPrimaryKey(F record);
+}

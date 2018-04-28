@@ -1,0 +1,36 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.studentEntity;
+import com.example.demo.mapper.studentMapper;
+
+import tk.mybatis.mapper.entity.Example;
+
+@Service
+public class studentServiceImpl implements studentService{
+
+	@Autowired
+	private studentMapper stumapper;
+	
+	@Override
+	public List<studentEntity> selectStu(studentEntity stu) {
+		
+		
+		
+		Example example=new Example(studentEntity.class);
+		example.createCriteria().andEqualTo("id",stu.getId());
+		List<studentEntity> list=stumapper.selectAll();
+		return list;
+	}
+
+	@Override
+	public int addStu(studentEntity stu) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

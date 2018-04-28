@@ -1,0 +1,22 @@
+package com.example.demo.seriver;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.student;
+import com.example.demo.mapper.OPstudent;
+
+@RestController
+public class serviceStudent {
+	@Autowired
+	private OPstudent opstudnet;
+	
+	public List<student> findstu(String name){
+		
+		return opstudnet.getstudnetInfo(name);
+		
+	}
+}

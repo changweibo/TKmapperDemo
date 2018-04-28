@@ -1,0 +1,23 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.VO.VOStudent;
+import com.example.demo.seriver.serviceStudent;
+
+@RestController
+public class findStudent {
+	@Autowired
+	private serviceStudent ser;
+
+	@RequestMapping(value = "/findStu")
+	public List<VOStudent> findstu(String name) {
+
+		return ser.findstu(name);
+
+	}
+}

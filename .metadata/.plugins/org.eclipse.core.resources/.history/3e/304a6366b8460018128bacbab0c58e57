@@ -1,0 +1,8 @@
+package com.example.demo.studentinterface;
+
+
+import tk.mybatis.mapper.common.MySqlMapper;
+
+public interface student<T> extends MySqlMapper<T>,mapper<T> {
+
+}

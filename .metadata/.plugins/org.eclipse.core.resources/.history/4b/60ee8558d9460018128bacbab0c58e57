@@ -1,0 +1,19 @@
+package com.example.demo.seriver;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.VO.VOStudent;
+import com.example.demo.mapper.OPstudent;
+
+public class serviceStudentimpl implements s{
+	@Autowired
+	private OPstudent opstudnet;
+	
+	public List<VOStudent> findstu(String name){
+		
+		return opstudnet.getstudnetInfo(name);
+		
+	}
+}

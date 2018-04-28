@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="springbootdemo"/>
+<aop-project name="springbootTest"/>
+<aop-project name="TKmapperDemo"/>
+</aop-reference-model>

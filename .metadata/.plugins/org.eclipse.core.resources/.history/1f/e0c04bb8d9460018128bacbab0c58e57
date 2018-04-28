@@ -1,0 +1,16 @@
+package com.example.demo.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import com.example.demo.VO.VOStudent;
+import com.example.demo.entity.student;
+import com.example.demo.studentinterface.Mstudent;
+
+@Mapper
+public interface OPstudent extends Mstudent<student> {
+	
+	List<VOStudent> getstudnetInfo(@Param("name") String name);
+}

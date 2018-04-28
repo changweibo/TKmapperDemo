@@ -1,0 +1,13 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.VO.studentVO;
+
+public interface studentService {
+	
+	List<studentVO> selectStu(studentVO stu);
+	
+	int addStu(studentVO stu);
+
+}

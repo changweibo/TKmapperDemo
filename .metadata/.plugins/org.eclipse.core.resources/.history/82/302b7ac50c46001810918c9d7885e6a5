@@ -1,0 +1,9 @@
+package com.example.demo.mapper;
+
+public class Snippet {
+	public static void main(String[] args) {
+		 com.example.demo.entity.student
+		
+	}
+}
+
